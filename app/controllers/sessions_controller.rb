@@ -3,8 +3,9 @@ class SessionsController < ApplicationController
     
   end
   def create
-    session[:name] = params(:name)
-    redirect_to '/hello.html.erb'
+    if params[:name] != nil || params[:name] != ''
+      session[:name] = params[:name]
+      redirect_to '/hello.html.erb'
   end
   def destroy
     session.delete :name
