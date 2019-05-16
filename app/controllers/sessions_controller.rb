@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       session[:name] = params[:name]
       redirect_to '/hello.html.erb'
     else
-      redirect_to :login
+      redirect_to '/login'
     end
   end
   def destroy
